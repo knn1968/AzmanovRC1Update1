@@ -20,12 +20,25 @@ namespace AzmanovRC1Update1
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)
         {
-//            app.UseIISPlatformHandler();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+            //            app.UseIISPlatformHandler();
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync($"Hello World! {context.Request.Path}");
-            });
+  //          var html = @"<!DOCTYPE html>
+  //<html>
+  //<head>
+  //    <meta charset = ""utf-8""/>
+  //     <title></title>
+  // </head>
+  // <body>
+  //     <h2> Azmanov </h2>
+  // </body>
+  // </html>";
+
+  //          app.Run(async (context) =>
+  //          {
+  //              await context.Response.WriteAsync(html);
+  //          });
         }
 
 
