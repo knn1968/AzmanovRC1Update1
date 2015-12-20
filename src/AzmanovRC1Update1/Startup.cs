@@ -11,6 +11,7 @@ using Azmanov.Services.Interfaces;
 using Azmanov.Services;
 using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.Extensions.Configuration;
+using Azmanov.Data;
 
 namespace AzmanovRC1Update1
 {
@@ -36,6 +37,9 @@ namespace AzmanovRC1Update1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddEntityFramework()
+                .AddSqlServer().
+                AddDbContext<AzmanovContext>();
 
             if (_hostingEnvironment.IsDevelopment())
             {

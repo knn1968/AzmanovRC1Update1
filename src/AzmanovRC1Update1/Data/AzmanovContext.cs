@@ -34,7 +34,7 @@ namespace Azmanov.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connString = Startup.Configuration["Data:AzmanovContextConnection"];
+            string connString = Startup.Configuration["Data:AzmanovDevContextConnection"];
             optionsBuilder.UseSqlServer(connString);
             base.OnConfiguring(optionsBuilder);
         }
