@@ -4,8 +4,8 @@
   },
   "Data": {
     //"AzmanovContextConnection": "Server=(localdb)\\ProjectsV12;Database=AzmanovDbBeta7;Trusted_Connection=true;MultipleActiveResultSets=true;"
-    "AzmanovContextConnection": "Server=tcp:azmanov.database.windows.net,1433;Database=AzmanovRC1Update1_db;User ID=kirilnikolov@azmanov;Password=Av0cad0#;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",
-    "AzmanovDevContextConnection": "Server=(localdb)\\ProjectsV12;Database=AzmanovRC1Update1_db;Trusted_Connection=true;MultipleActiveResultSets=true;"
+    //"AzmanovContextConnection": "Server=tcp:azmanov.database.windows.net,1433;Database=AzmanovRC1Update1_db;User ID=kirilnikolov@azmanov;Password=Av0cad0#;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",
+    "AzmanovDevContextConnection": "Server=(localdb)\\ProjectsV12;Database=AzmanovRC1Update1;Trusted_Connection=true;MultipleActiveResultSets=true;"
 
   },
   "GallerySettings": {
@@ -14,6 +14,6 @@
     "PagesPerPageGroup": "5"
   },
   "HomePage": {
-    "ImageUrl": "~/img/home/1-head.jpg"
+    "ImageUrl": "~/img/home/home.jpg"
   }
 }

@@ -12,7 +12,7 @@ namespace Azmanov.Data
     {
         public AzmanovContext()
         {
-            //Database.EnsureCreated();
+            Database.EnsureCreated();
             Database.Migrate();
         }
         public DbSet<Autobiography> Autobiographies { get; set; }

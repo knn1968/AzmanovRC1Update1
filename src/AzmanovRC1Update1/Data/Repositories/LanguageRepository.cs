@@ -50,10 +50,17 @@ namespace Azmanov.Data.Repositories
         }
         public LanguageDetail GetLanguageDetailsInCurrentLanguage(string languageShortDisplay)
         {
-            var language = _context.Languages.Include(p=>p.LanguageDetails).FirstOrDefault(p => p.ShortDisplay == languageShortDisplay);
+            var language = _context.Languages.Include(p => p.LanguageDetails).FirstOrDefault(p => p.ShortDisplay == languageShortDisplay);
 
             if (language == null)
-                throw new Exception("Internal Error", new Exception("Could not retrieve native language."));
+            {
+                language = GetDefaultLanguage();
+
+                if (language == null)
+                {
+                    throw new Exception("Internal Error", new Exception("Could not retrieve native language."));
+                }
+            }
 
             return language.LanguageDetails
                      .First(p => p.InLanguageId == language.Id);

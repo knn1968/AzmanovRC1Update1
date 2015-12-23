@@ -1,28 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Azmanov.Data.Repositories;
+using Azmanov.Entities;
+using Azmanov.Factories;
+using Azmanov.ViewModels;
 using Microsoft.AspNet.Mvc;
-using Azmanov.Data;
+using Microsoft.Data.Entity;
+using System;
+using System.Linq;
+using Azmanov.Services;
 
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-
-namespace AzmanovRC1Update1.Controllers.Web
+namespace Azmanov.Controllers.Web
 {
     public class HomeController : Controller
     {
-        private AzmanovContext _context;
+        private IHomeViewModel _homeViewModel;
 
-        public HomeController(AzmanovContext context)
+        public HomeController(IHomeViewModel homeViewModel)
         {
-            _context = context;
+            _homeViewModel = homeViewModel;
         }
 
-        // GET: /<controller>/
-        public IActionResult Index()
+        public IActionResult Index(string language = null)
         {
-            var v = _context.Autobiographies.ToList();
-            return View();
+            _homeViewModel.Load(language);
+            return View(_homeViewModel);
         }
     }
 }
+
